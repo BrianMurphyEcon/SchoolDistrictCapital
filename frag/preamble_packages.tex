@@ -1,0 +1,184 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SEC: PACKAGEs MAIN  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{mathptmx}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{longtable,booktabs,threeparttablex}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[export]{adjustbox}[2011/08/13]
+\usepackage{enumitem}
+\usepackage[text={16cm,24cm}]{geometry}
+\usepackage{ragged2e}
+\usepackage{csquotes}
+\usepackage{rotating}
+\usepackage{seqsplit} % for line breaking
+\usepackage{listings}
+\usepackage{tabularx}
+
+\usepackage[hang, flushmargin, bottom, symbol]{footmisc}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, plainpages=false, pdfpagelabels=true, urlcolor=blue]{hyperref}
+\usepackage{float}
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% For figure alignment and Labeling
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{changepage}
+
+% \usepackage{subfig}
+% \usepackage[font=singlespacing, skip=10pt]{caption}
+\usepackage{subcaption}
+\usepackage{caption}
+\captionsetup[figure]{labelfont={bf},name={Fig.},labelsep=period}
+% http://www.peteryu.ca/tutorials/publishing/latex_captions
+% Alph for A, B, C, ... 
+\renewcommand\thesubfigure{\textbf{\alph{subfigure}}}
+% simple format: no parenthesis around (A) (B)
+% captionskip: gap between panel sub-eheading and figure
+% \captionsetup[subfigure]{labelformat=simple, labelsep=space, captionskip=0pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SEC: Indentation  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{
+	a4paper,
+	noheadfoot=false,
+	left=1.0in,
+	right=1.0in,
+	top=1.0in,
+	bottom=1.0in,
+}
+\makeatletter
+%\date{Janunary 2, 2018}
+% \date{April 15, 2021}
+% \date{September 8, 2021}
+%\date{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Remove the spacing between paragraphs and have a small paragraph indentation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{15pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Line Spacing for Main Text and Footnotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Using the setspace package, set spacing in document, not here
+% \setstretch{1.2}
+% \singlespacing
+% \doublespacing
+% \onehalfspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% MATH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{assumption}{Assumption}
+\newtheorem{definition}{Definition}
+\newcommand{\qedsymbol}{$\blacksquare$}
+\newtheorem{proof}{Proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Footnotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1. Number hang with gap
+% 2. Gap between citations
+% 3. linespae
+
+\usepackage{footnotebackref}
+% separation between foonotes
+\addtolength{\footnotesep}{0.1mm}
+% within footnote separation
+\renewcommand{\footnotelayout}{\setstretch{1.00}}%
+\setlength{\footnotemargin}{4mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Heading Formatting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+
+% \titlespacing\section{0pt}{12pt plus 2pt minus 2pt}{9pt plus 2pt minus 2pt}
+% \titlespacing\subsection{0pt}{9pt plus 2pt minus 2pt}{6pt plus 2pt minus 2pt}
+% \titlespacing\subsubsection{0pt}{6pt plus 2pt minus 2pt}{3pt plus 2pt minus 2pt}
+% \titleformat{\subsubsection}[runin]{\bfseries\itshape}{}{0pt}{}[\ignorespaces]
+% \titlespacing\paragraph{\parindent}{4pt plus 2pt minus 2pt}{2pt plus 2pt minus 2pt}
+% % \titleformat{\paragraph}[runin]{\bfseries\itshape}{}{0}{}[]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Title page Formatting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titling}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% ALERTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Alerts could be turned ON or OFF
+% When editing use alerts to note where possible changes should appear
+% When releasing paper, turn all alerts off
+% Define Colors and alerts
+
+\usepackage{xcolor}
+\definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\definecolor{bronze}{rgb}{0.8, 0.5, 0.2}
+\definecolor{dartmouthgreen}{rgb}{0.05, 0.5, 0.06}
+
+\newcommand{\AlertStr}{=:}
+\newcommand{\AlertEnd}{:=}
+
+%%% uncomment to turn ALERTS ON
+\newcommand{\AlertLit}[1]{$\Big[$\textbf{LL\AlertStr}\emph{\textbf{\textcolor{ceruleanblue}{#1}}}\textbf{\AlertEnd LL}$\Big]$}
+\newcommand{\AlertPol}[1]{$\Big[$\textbf{PP\AlertStr}\underline{\textbf{\textcolor{bronze}{#1}}}\textbf{\AlertEnd PP}$\Big]$}
+\newcommand{\AlertMath}[1]{$\Big[$\textbf{MM\AlertStr}\thinspace\textbf{\textcolor{brightmaroon}{#1}}\textbf{\AlertEnd MM}$\Big]$}
+
+% The current edit point, what to do next
+\newcommand{\AlertEdit}[1]{$\Big[$\textbf{EDIT--POINT\AlertStr}\emph{\textbf{\textcolor{dartmouthgreen}{#1}}}\textbf{\AlertEnd EDIT--POINT}$\Big]$}
+\newcommand{\AlertNote}[1]{}
+
+%%% uncomment to turn ALERTS OFF
+% \newcommand{\AlertLit}[1]{}
+% \newcommand{\AlertPol}[1]{}
+% \newcommand{\AlertMath}[1]{}
+
+% Options for packages loaded elsewhere
+\def\tightlist{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Edit Notes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\EDIT}[2]{
+\begin{quotation}
+\noindent\textbf{\textcolor{red}{EDIT}} \uppercase{#1}: \textit{#2}
+\end{quotation}
+}
+\newcommand{\REFE}[1]{\textit{#1 (\textcolor{blue}{\textbf{R}})}}
+
+
+% % Table-related package
+% \usepackage{changepage}
+% \usepackage{adjustbox}
+% \usepackage{booktabs}
+% \usepackage{array}

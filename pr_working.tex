@@ -1,0 +1,113 @@
+\documentclass[12pt,english]{article}
+\pdfoutput=1
+
+\input{frag/preamble_citation}
+\input{frag/preamble_packages}
+\input{frag/preamble_estout}
+% Author, title, abstract info
+\input{mn_title_abstract_etc}
+
+% Control overall double spacing
+\doublespacing
+
+\begin{document}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% B. Title Title and Authors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% B.1 Title
+\title{\PAPERTITLE
+% \thanks{
+% \PAPERINFO
+% }
+}
+% B.2 Authors
+
+% Use symbolic footnotes for authors
+\makeatletter
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\makeatother
+
+% Reset footnote counter before author list
+\setcounter{footnote}{0}
+
+% Create author block
+\author{
+\AUTHORALBINO\thanks{\AUTHORALBINOINFO}%
+\and
+\AUTHORCRAIG\thanks{\AUTHORSUHINFO}% ← this increments footnote counter to 2 (†)
+\and
+\AUTHORMALIK\footnotemark[2]%
+\and
+\AUTHORMASHRUR\thanks{\AUTHORMASHRURINFO}%
+\and
+\AUTHORMCGREGOR\thanks{\AUTHORMCGREGORINFO}%
+\and
+\AUTHORMURPHY\footnotemark[2]%
+\and
+\AUTHORSORENSEN\footnotemark[2]%
+}
+
+% After author block, restore regular numbering for text footnotes
+\makeatletter
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\makeatother
+
+
+%\ACKNOWLEDGMENTS
+% B.3 Date
+\date{April 2025, \textit{Preliminary}}
+% B.4 Make title
+\maketitle
+% B.5 Abstract with keywords and JEL
+\begin{abstract}
+\singlespacing
+\ABSTRACTB\\\\
+\PAPERJEL\\
+\PAPERKEYWORDS
+\end{abstract}
+\thispagestyle{empty}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% C. Main Text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{3em}
+%\setlength{\parskip}{1em}
+\interfootnotelinepenalty=10000
+\setcounter{page}{1}
+\input{mn_main_text}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% D. Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begingroup
+\setstretch{1.1}
+\setlength\bibitemsep{4pt}
+\printbibliography[title=References] 
+\endgroup
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% E. Main Text Tables and Figures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% F. Appendix 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\begingroup
+\onehalfspacing
+\centering
+\Large APPENDIX \\
+\Large
+\begin{singlespace}
+\PAPERTITLE
+\end{singlespace}
+\endgroup
+\input{mn_appendix}
+\end{document}

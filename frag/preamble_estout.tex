@@ -1,0 +1,60 @@
+% *****************************************************************
+% Estout LaTeX wrapper
+% *****************************************************************
+
+%%Original code developed by Jörg Weber: see
+%% https://www.jwe.cc/2012/03/stata-latex-tables-estout/
+%% and
+%% https://www.jwe.cc/blog/
+
+
+\let\estinput=\input % define a new input command so that we can still flatten the document
+
+\newcommand{\estwide}[3]{
+	\vspace{.75ex}{
+		%\textsymbols% Note the added command here
+		\begin{tabular*}
+			{\textwidth}{@{\hskip\tabcolsep\extracolsep\fill}l*{#2}{#3}}
+			\toprule
+			\estinput{#1}
+			\\ \bottomrule          % 08 Dec 2021. Add these slashes.
+			\addlinespace[.75ex]
+		\end{tabular*}
+	}
+}	
+
+\newcommand{\estauto}[3]{
+	\vspace{.75ex}{
+		%\textsymbols% Note the added command here
+		\begin{tabular}{l*{#2}{#3}}
+			\toprule
+			\estinput{#1}
+			\\ \bottomrule          % 08 Dec 2021. Add these slashes.
+			\addlinespace[.75ex]
+		\end{tabular}
+	}
+}
+
+% Allow line breaks with \\ in specialcells
+\newcommand{\specialcell}[2][c]{%
+	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}
+}
+
+\newcommand{\sym}[1]{\rlap{#1}}% Thanks David Carlisle
+
+% *****************************************************************
+% siunitx
+% *****************************************************************
+\usepackage{siunitx} % centering in tables
+\sisetup{
+	detect-mode,
+	tight-spacing		= true,
+	group-digits		= false ,
+	input-signs		= ,
+	input-symbols		= ( ) [ ] - + *,
+	input-open-uncertainty	= ,
+	input-close-uncertainty	= ,
+	table-align-text-post	= false
+}
+
+%%%%%%%%%%% End of wrapper %%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+
+\begin{table}[tbp] \centering
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\begin{tabularx}{\linewidth}{@{}lC@{}}
+
+\toprule
+{state\_name}&{id\_govs} \tabularnewline
+\midrule \addlinespace[\belowrulesep]
+Arizona&19 \tabularnewline
+Arkansas&27 \tabularnewline
+California&131 \tabularnewline
+Colorado&29 \tabularnewline
+Delaware&1 \tabularnewline
+Georgia&27 \tabularnewline
+Illinois&102 \tabularnewline
+Indiana&76 \tabularnewline
+Iowa&31 \tabularnewline
+Kansas&43 \tabularnewline
+Kentucky&17 \tabularnewline
+Massachusetts&12 \tabularnewline
+Michigan&265 \tabularnewline
+Minnesota&63 \tabularnewline
+Missouri&109 \tabularnewline
+Nebraska&17 \tabularnewline
+New Hampshire&15 \tabularnewline
+New Jersey&55 \tabularnewline
+New York&430 \tabularnewline
+Ohio&325 \tabularnewline
+Oklahoma&91 \tabularnewline
+Oregon&55 \tabularnewline
+Pennsylvania&298 \tabularnewline
+Texas&263 \tabularnewline
+Washington&66 \tabularnewline
+Wisconsin&42 \tabularnewline
+\bottomrule 
+
+\end{tabularx}
+\end{table}
+\end{document}

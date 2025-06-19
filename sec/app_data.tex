@@ -1,0 +1,50 @@
+Materials from this example appendix comes from 
+\href{https://yujiezhangecon.github.io/files/research/PrjRDSE/ZBHMWDisasterLearningAsia.pdf}{Zhang et al. (2024)}.
+
+\subsection{MICS Data Appendix\label{Data_Appendix_MICS}}
+
+\subsubsection{Additional Data Description}
+
+We use the 6th round of the Multiple Indicator Cluster Survey \autocite{mics6_unicef_2023} to study the educational outcomes effect of natural disasters. MICS is a global multi-purpose survey program conducted by the United Nations Children's Fund (UNICEF), and it provides statistically sound and internationally comparable data on the situation of children and women. From mid-1990s until now, it has served as integral part of plans and policies of many governments covering 118 countries with 355 surveys containing more than 30 Sustainable Development Goals (SDGs) indicators. 
+ 
+Although we choose the countries mainly because of the availability of data in MICS6, this is not the only reason. For some countries, the stakes in terms of negative impacts are particularly high even they are hit by disasters at same severity level. For example, Bangladesh is a densely populated, low-lying country with substantial exposure to cyclones, floods and drought and is predicted to be affected by increasingly severe climatic conditions in the next few decades \autocite{stocker_climate_2014}. The Bangladesh government expects that “the greatest single impact of climate change might be on human migration/displacement,” estimating that “by 2050 one in every 7 people in Bangladesh will be displaced by climate change” \autocite{comprehensive_disaster_management_programme_2015}. 
+
+Table \ref{tab:app:one} provides country-specific data collection window, sample size, and summary statistics for some key variables. \blindtext
+
+\subsubsection{Constructing Educational Outcomes}
+
+The educational outcomes will be the grade progression, school enrollment and the foundational learning skills for children age 7 to 14. The MICS6 records the highest level and grade or year of school the child has ever attended and if the child attended school or any early childhood education program in current school year. We show the average enrollment rate at region level\footnote{The definition of region differs across countries. It is district for Bangladesh, oblast for Kyrgyzstan, district for Pakistan, provinces for Thailand, respectively, and region for other countries.} for each countries in Table \ref{tab:app:two}. 
+
+\blindtext
+
+\subsubsection{Details on Child attributes}
+
+We consider children age and gender as the most important child attributes. As the MICS survey is implemented at household level and record individuals in the household with a focus on women and children, if the child selected in one household for children 5-17 questionnaire is the respondent for household questionnaire, then some basic information is recorded in household individual raw data (named as "hl", while the children 5-17 raw data file is named "fs"). This is also the case for educational outcome except test score as mentioned in previous sections. 
+
+\blindtext 
+
+\subsection{Climate Data (EM-DAT) Appendix\label{Data_Appendix_Climate}}
+
+This is the climate data (EM-DAT) appendix. \blindtext 
+
+\subsubsection{Additional Data Description}
+
+We use EM-DAT (1900-2023) to construct natural disaster variables. EM-DAT is an international database compiled by the Centre for Research on the Epidemiology of Disaster (CRED) with comprehensive information on disasters which led to the substantial loss of human life including natural disasters and technological disasters. Occurrence and effects of more than 21,000 disasters worldwide 1900-present are recorded to support decision making for disaster preparedness, vulnerability assessment, and prioritize resource allocation for disaster response. 
+It is compiled from various sources: UN agencies, non-governmental organisations, insurance companies, research institutes, and press agencies. To ensure the quality of data, reliability score is assigned from one to five with higher number showing higher quality. 
+
+EM-DAT data documents all the natural disasters as a group and as five subgroups – geophysical, meteorological, hydrological, climatological, and biological. One or more specific natural disasters are recorded in each subgroups, while technological disasters include various types of industrial accidents, miscellaneous accidents, and transport accidents \autocite{mavhura2023disaster, guha-sapir_em-dat}. 
+Entries in the EM-DAT/CRED database are based on any of the following: (a) 10 or more people killed, (b) 100 or more people affected, (c) the declaration of a state of emergency, or (d) a call for international assistance \autocite{panwar2020disaster, mavhura2023disaster, sy2019flood}. The coding of disasters are internationally standardized and allows researchers to link them with other databases such as Dartmouth Flood Observatory, Global Volcanism Program, and USGS. 
+
+\blindtext 
+
+\subsubsection{Processing EM-DAT Data}
+
+Choosing type of disaster, countries, and time period, the raw data can be downloaded as an Excel Worksheet. 
+In this raw file, each row is one disaster and columns are information associated with this one single disaster. One disaster has one unique disaster identifier generated by year, sequence number, and country ISO alpha 3 code. Each disaster has same identifier and when one disaster affects several countries, it is recorded several times. For example, "2016-0375-PAK" is the identifier to a flash flood that happened in Pakistan in 2016. 
+
+\blindtext
+
+\clearpage 
+
+
+  
